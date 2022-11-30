@@ -12,12 +12,17 @@ Console.Write("Введите второе число: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
 if(numberA>numberB)
+{
     Console.WriteLine("max = " + numberA + ", min =" + numberB);
+}
 else
+{
     if(numberA<numberB)
+    {
     Console.WriteLine("max = " + numberB + ", min =" + numberA);
-    
+    }
     else
+    {
     Console.WriteLine("Эти числа равны"); 
-
-   
+    }
+}   
