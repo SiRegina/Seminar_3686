@@ -16,12 +16,16 @@ int numberC = Convert.ToInt32(Console.ReadLine());
 
 int maximum;
 
-if(numberA>numberB)
+if (numberA>numberB)
+{
     maximum = numberA;
+}
 else
+{
     maximum = numberB;
-
-if(numberC>maximum)
+}
+if (numberC>maximum)
+{
     maximum = numberC;
-    
+}    
 Console.WriteLine(maximum);
