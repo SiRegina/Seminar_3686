@@ -5,7 +5,7 @@
 Console.Write("Введите число: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 
-if(numberA%7 == 0 & numberA%23 ==0)
+if(numberA%7 == 0 && numberA%23 ==0)
    {
         Console.WriteLine($"{numberA} делится на 7 и 23");
     }
