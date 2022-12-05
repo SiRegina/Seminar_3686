@@ -5,8 +5,9 @@
 
 int number = new Random().Next(10, 100);
 
-int digit2 = number %10;
 int digit1 = number / 10;
+int digit2 = number %10;
+
 
 // Console.WriteLine("Случайное число = " + number + " Первая цифра = "+ digit1 + " Вторая цифра = "+ digit2);
 Console.WriteLine($"Случайное число =  {number} + Первая цифра = {digit1}  Вторая цифра = {digit2}");
