@@ -22,3 +22,22 @@ while (true)
 
 Console.WriteLine (count);
 
+
+ 
+
+//  string ReadNumb(string messages)
+// {
+//     Console.Write(messages);
+//     return Console.ReadLine();
+// }
+
+// int Counter()
+//     {
+//       string number = ReadNumb("Введите число или stop: ");
+//       if(number == "stop") return 0;
+//       int count = Counter();
+//       if(int.TryParse(number, out int number2) == true && number2 > 0) count++;
+//       return count;
+//     }
+// int res = Counter();
+// Console.WriteLine($"Результат:  {res} чисел");
