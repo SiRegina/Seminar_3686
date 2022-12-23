@@ -1,5 +1,5 @@
-﻿// Задача 57: Составить частотный словарь элементов двумерного массива. Частотный словарь содержит информацию о том, 
-// сколько раз встречается элемент входных данных.
+﻿// Задача 57: Составить частотный словарь элементов двумерного массива. 
+// Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных.
 // 1, 2, 3
 // 4, 6, 1
 // 2, 1, 6
@@ -11,13 +11,17 @@
 // 6 встречается 2 раза
 // В нашей исходной матрице встречаются элементы от 0 до 9
 
+
+
+//считывает целое число от пользователя
 int ReadInt(string message)
 {
     Console.WriteLine(message);
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int[,] GetRandomMatrix(int rows, int columns, int leftRange = 0, int rightRange = 10)
+
+int[,] GetRandomMatrix(int rows, int columns, int leftRange = 0, int rightRange = 9)
 {
     int[,] matr = new int[rows, columns];
 
@@ -37,40 +41,37 @@ void PrintMatrix(int[,] matr)
 {
     for(int i = 0; i < matr.GetLength(0); i++)
     {
-        Console.WriteLine();
         for (int j = 0; j < matr.GetLength(1); j++)
         {
             Console.Write(matr[i, j] + " ");
         }
+        Console.WriteLine();
     }
 }
 
-int Counter(int k, int[,] matr)
+void PrintRepeats(int[,] matr)
 {
-    int count = 0;
-    for (int i = 0; i < matr.GetLength(0); i++)
+    int[] counters = new int[100];
+
+    for(int i = 0; i < matr.GetLength(0); i++)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            if (matr[i,j]==k)
-            {
-                count+=1;
-            }
+            counters[matr[i, j]]++;
         }
-        
     }
-    return count;
-    
-}
 
+    for(int i = 0; i < counters.Length; i++)
+    {
+        if (counters[i] > 0)
+        {
+            Console.WriteLine($"Элемент {i} повторяется {counters[i]} раз ");
+        }
+    }
+}
 
 int rowsCount = ReadInt("Введите число строк");
 int columnsCount = ReadInt("Введите число столбцов");
 int[,] matrix = GetRandomMatrix(rowsCount, columnsCount);
 PrintMatrix(matrix);
-
-for (int k = 0; k <=9; k++)
-{
-    int count = Counter(k, matrix);
-    Console.WriteLine($"Элемент {k} встретился {count} раз");
-}
+PrintRepeats(matrix);
